@@ -23,14 +23,13 @@ class RangeSensor {
         uint16_t read();
         inline void seRangeSensorfset(const float value) {offset_ = value;}
         inline float geRangeSensorfset() {return offset_;}
-        inline uint8_t getAddr() {return sensor.getAddress();}
+        inline uint8_t getAddr() {return sensor_.getAddress();}
 
     public:
         bool get_data_ = false;
         bool vaild_data_ = false;
         float dist_ = 255.0f;
         std::array<float, 3> to_ground_;
-        float vaild_radian_ = 60.0f*PI180;
         float vaild_distance_ = 200.0f;
         unsigned long last_time_millis_ = 0;
 
